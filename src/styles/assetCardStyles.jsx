@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const assetCardStyles = makeStyles({
+export const assetCardStyles = makeStyles(theme => ({
   root: {
     maxWidth: 220,
     maxHeight: 67,
@@ -34,4 +34,4 @@ export const assetCardStyles = makeStyles({
     display: "inline-block",
     width: 105
   }
-});
+}));

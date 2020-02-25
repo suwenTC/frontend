@@ -32,7 +32,7 @@ const deals = [
 ];
 
 const Deals = () => {
-  return deals.map(deal => <Deal deal={deal} />);
+  return deals.map((deal, index) => <Deal key={index} deal={deal} />);
 };
 
 export default Deals;
