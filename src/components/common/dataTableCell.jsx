@@ -1,6 +1,5 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
-import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 
 import { dataTableCellStyles } from "../../styles/dataTableCellStyles";
@@ -9,7 +8,6 @@ const DataTableCell = ({ overline, data, captions }) => {
   const classes = dataTableCellStyles();
   return (
     <Paper elevation={0} className={classes.root}>
-      <Divider />
       <Typography
         variant="overline"
         display="block"

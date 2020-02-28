@@ -1,22 +1,28 @@
 import React from "react";
 
-import Grid from "@material-ui/core/Grid";
+import { Grid, Divider } from "@material-ui/core";
 
 import DataTableCell from "./dataTableCell";
 
-const DataTableBody = () => {
-  const test = [1, 2, 3, 4, 5, 6];
+const DataTableBody = ({ data }) => {
   return (
-    <Grid container spacing={2}>
-      {test.map(e => (
-        <Grid key={e} sm={4} xs={6} item>
-          <DataTableCell
-            overline={"TOTAL FH"}
-            data={41234}
-            captions={["Total hours since new"]}
-          />
+    <Grid container direction="column" spacing={4}>
+      <Grid item>
+        <Grid container spacing={2}>
+          {data.length !== 0
+            ? data.map((e, index) => (
+                <Grid key={index} xs={e.span[0]} sm={e.span[1]} item>
+                  <Divider />
+                  <DataTableCell
+                    overline={e.label}
+                    data={e.value}
+                    captions={e.caption}
+                  />
+                </Grid>
+              ))
+            : null}
         </Grid>
-      ))}
+      </Grid>
     </Grid>
   );
 };

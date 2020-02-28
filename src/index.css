@@ -1,10 +1,34 @@
+@font-face {
+  font-family: "Seravek";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Seravek"), url("./fonts/Seravek.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Seravek ExtraLight";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Seravek ExtraLight"),
+    url("./fonts/Seravek-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Seravek Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Seravek Light"), url("./fonts/Seravek-Light.woff") format("woff");
+}
+
 body {
   margin: 0;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Seravek Light", "Roboto", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #f6f6f6;
 }
 
 code {
@@ -27,4 +51,8 @@ u {
     0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   font-family: "Roboto";
   padding: 16px;
+}
+
+.add-row:hover {
+  background-color: white;
 }

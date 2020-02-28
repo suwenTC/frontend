@@ -1,11 +1,11 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const assetCardStyles = makeStyles(theme => ({
+export const assetStyles = makeStyles(theme => ({
   root: {
     maxWidth: 220,
     maxHeight: 67,
-    backgroundColor: "#FAFAFA",
-    borderRadius: 1
+    backgroundColor: "#f1f1f1",
+    borderRadius: 4
   },
   content: {
     padding: 0,
@@ -26,12 +26,12 @@ export const assetCardStyles = makeStyles(theme => ({
   },
   captionLeft: {
     textAlign: "left",
-    display: "inline-block",
-    width: 105
+    width: "50%",
+    display: "inline-block"
   },
   captionRight: {
     textAlign: "right",
-    display: "inline-block",
-    width: 105
+    width: "50%",
+    display: "inline-block"
   }
 }));

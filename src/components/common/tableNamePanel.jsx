@@ -1,29 +1,30 @@
 import React from "react";
 
-import Grid from "@material-ui/core/Grid";
-import { Typography } from "@material-ui/core";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import { Grid, Typography } from "@material-ui/core";
 
 import { tableNameStyles as styles } from "../../styles/tableNameStyles";
+import DropDownList from "./dropDownList";
 
-const TableName = ({ hideButton = false }) => {
+const TableNamePanel = ({ label, caption, buttons = [<DropDownList />] }) => {
   return (
     <Grid container style={styles.overlay} alignItems="center">
       <Grid xs={12} sm={8} item>
         <Typography variant="subtitle1" style={styles.subtitle1}>
-          Landing Gear Status
+          {label}
         </Typography>
       </Grid>
-      <Grid xs={12} sm={3} item>
+      <Grid xs={12} sm={buttons.length === 2 ? 2 : 3} item>
         <Typography variant="caption" display="block" style={styles.caption}>
-          As of Mar-31-2019
+          {caption}
         </Typography>
       </Grid>
-      <Grid xs={12} sm={1} item>
-        {hideButton ? null : <MoreVertIcon color="action" />}
-      </Grid>
+      {buttons.map((button, index) => (
+        <Grid key={index} xs={12} sm={1} item>
+          {button}
+        </Grid>
+      ))}
     </Grid>
   );
 };
 
-export default TableName;
+export default TableNamePanel;

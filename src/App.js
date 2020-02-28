@@ -1,40 +1,37 @@
 import React from "react";
-import "./App.css";
 import { Route, Redirect, Switch } from "react-router-dom";
-import Container from "@material-ui/core/Container";
-import { Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 
-import "font-awesome/css/font-awesome.css";
+import Deals from "./components/pages/deals";
 
-import DataTable from "./components/common/dataTable";
-import Deals from "./components/deals";
-import EditableTable from "./components/common/editableTable";
-import Test from "./components/pages/test";
-
+import "./App.css";
 import "./index.css";
+import "font-awesome/css/font-awesome.css";
+import { ThemeProvider } from "@material-ui/core/styles";
+import { theme } from "./styles/seravekFontTheme";
+import IDK from "./components/pages/idk";
 
 function App() {
   return (
     <div className="App">
-      <Container maxWidth={"lg"} style={{ padding: 0 }}>
-        {/*
-        <Switch>
-          <Route path="/deals" component={Deals} />
-          <Route path="/asset/:serialNumber" component={Test} />
-          <Redirect from="/" exact to="/deals" />
-          <Redirect to="/not-found" />
-        </Switch>
-  */}
-        <br />
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <DataTable />
+      <ThemeProvider theme={theme}>
+        <Container maxWidth={"xl"} style={{ padding: 0 }}>
+          <Grid container justify="center" alignItems="center" spacing={2}>
+            <Grid item xs={12}>
+              <Switch>
+                <Route path="/deals" component={Deals} />
+                <Route
+                  path="/asset/:dealNumber/:serialNumber"
+                  component={IDK}
+                />
+                <Route path="/not-fount" />
+                <Redirect from="/" exact to="/deals" />
+                <Redirect to="/not-found" />
+              </Switch>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <EditableTable />
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </ThemeProvider>
     </div>
   );
 }

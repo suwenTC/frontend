@@ -4,7 +4,6 @@ export const dataTableCellStyles = makeStyles(theme => ({
   root: {
     maxWidth: 156,
     textAlign: "left",
-    fontFamily: "Roboto",
     backgroundColor: "#F6F6F6",
     paddingBottom: 3
   },

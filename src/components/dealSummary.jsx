@@ -1,42 +1,52 @@
 import React from "react";
 
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import { Chip, Grid, Typography } from "@material-ui/core";
+import { dealSummaryStyles } from "../styles/dealSummaryStyles";
 
-const DealSummary = ({ dealName, sponsor }) => {
+const DealSummary = ({ deal }) => {
+  const classes = dealSummaryStyles();
+  const { dealName, sponsor, operator, assets, stage, icon } = deal;
   return (
     <Grid container>
-      <Grid item xs={12} sm={6} container direction="column" spacing={1}>
+      <Grid item xs={12} sm={5} container spacing={1}>
         <Grid item>
-          <Typography
-            style={{ lineHeight: "16px" }}
-            variant="overline"
-            display="block"
-          >
+          <Typography variant="overline" className={classes.sponsor}>
             {sponsor}
           </Typography>
-          <Typography
-            variant="subtitle1"
-            style={{
-              fontSize: 20,
-              fontWeight: 500,
-              font: "Roboto",
-              lineHeight: "26px",
-              letterSpacing: 0.25
-            }}
-          >
+          <Typography variant="subtitle1" className={classes.dealName}>
             {dealName}
           </Typography>
         </Grid>
       </Grid>
-      <Grid xs={12} sm={4} item>
-        <Typography style={{ lineHeight: "36px" }} variant="subtitle1">
-          $19.00
-        </Typography>
+      <Grid xs={12} sm={5} item>
+        <Grid container alignItems="center" spacing={1}>
+          <Grid item sm={2}>
+            <Typography variant="subtitle1">{icon}</Typography>
+          </Grid>
+          <Grid item sm={3}>
+            <Typography variant="subtitle1" className={classes.assetSeries}>
+              737-800
+            </Typography>
+            <Typography
+              variant="caption"
+              display="block"
+              className={classes.assetSeries}
+            >
+              {operator}
+            </Typography>
+          </Grid>
+          <Grid item sm={2}>
+            <div className={classes.oval}>
+              <Typography variant="subtitle1" className={classes.assetCount}>
+                +{assets.length}
+              </Typography>
+            </div>
+          </Grid>
+        </Grid>
       </Grid>
       <Grid xs={12} sm={2} item>
-        <Typography style={{ lineHeight: "36px" }} variant="subtitle1">
-          $19.00
+        <Typography variant="subtitle1">
+          <Chip className={classes.chip} label={stage} />
         </Typography>
       </Grid>
     </Grid>
