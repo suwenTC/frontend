@@ -9,7 +9,7 @@ import "./index.css";
 import "font-awesome/css/font-awesome.css";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./styles/seravekFontTheme";
-import IDK from "./components/pages/idk";
+import AssetDetails from "./components/pages/AssetDetails";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
                 <Route path="/deals" component={Deals} />
                 <Route
                   path="/asset/:dealNumber/:serialNumber"
-                  component={IDK}
+                  component={AssetDetails}
                 />
                 <Route path="/not-fount" />
                 <Redirect from="/" exact to="/deals" />

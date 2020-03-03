@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import { Grid } from "@material-ui/core";
-import Asset from "./asset";
+import Asset from "./Asset";
 
 const Assets = ({ dealId, assets }) => {
   return (

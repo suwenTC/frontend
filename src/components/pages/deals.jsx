@@ -1,6 +1,6 @@
 import React from "react";
 
-import Deal from "./../deal";
+import Deal from "./../Deal";
 import { Grid } from "@material-ui/core";
 
 const deals = [
@@ -46,12 +46,6 @@ const deals = [
     operator: "Turpial Airlines",
     icon: <i className="fa fa-television fa-3x" aria-hidden="true" />,
     assets: [
-      {
-        serialNumber: "27992",
-        subseries: "737-800",
-        operator: "Alba Star",
-        assetType: "Aircraft"
-      },
       {
         serialNumber: "22943",
         subseries: "CFM56-5B6/P",

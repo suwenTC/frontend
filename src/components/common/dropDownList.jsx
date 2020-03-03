@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core";
 import { MoreVert } from "@material-ui/icons";
 
-import { ADD_ROW, EDIT_MODE, VIEW_MODE } from "../constants";
+import { ADD_ROW, EDIT_MODE, VIEW_MODE } from "../../constants";
 import { dropDownListStyles } from "../../styles/dropDownListStyles";
 
 const DropDownList = ({ options, onModeChange, onRowAdd }) => {
@@ -36,6 +36,7 @@ const DropDownList = ({ options, onModeChange, onRowAdd }) => {
     switch (options[index].label) {
       case ADD_ROW:
         onRowAdd();
+        break;
       case EDIT_MODE:
         onModeChange(false);
         break;

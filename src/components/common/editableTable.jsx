@@ -14,11 +14,11 @@ import {
 } from "@material-ui/icons";
 import MaterialTable from "material-table";
 
-import TableNamePanel from "./tableNamePanel";
-import DropDownList from "./dropDownList";
+import TableNamePanel from "./TableNamePanel";
+import DropDownList from "./DropDownList";
 import { dropDownListOperations } from "../../state/ducks/dropDownList";
 
-import { ADD_ROW, EDIT_MODE, VIEW_MODE } from "../constants";
+import { ADD_ROW, EDIT_MODE, VIEW_MODE } from "../../constants";
 import { editableTableStyles as styles } from "../../styles/editableTableStyles";
 import { generateButtonList } from "../utils";
 

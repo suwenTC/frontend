@@ -2,7 +2,7 @@ import React from "react";
 
 import { Grid, Divider } from "@material-ui/core";
 
-import DataTableCell from "./dataTableCell";
+import DataTableCell from "./DataTableCell";
 
 const DataTableBody = ({ data }) => {
   return (
@@ -16,7 +16,7 @@ const DataTableBody = ({ data }) => {
                   <DataTableCell
                     overline={e.label}
                     data={e.value}
-                    captions={e.caption}
+                    captions={e.captions}
                   />
                 </Grid>
               ))

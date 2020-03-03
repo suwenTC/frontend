@@ -1,8 +1,6 @@
 import React from "react";
 
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
+import { Card, CardContent, Typography } from "@material-ui/core/";
 
 import { assetStyles } from "../styles/assetStyles";
 
@@ -23,9 +21,11 @@ const Asset = ({ asset }) => {
           <span className={classes.captionLeft}>{asset.serialNumber}</span>
         </Typography>
 
-        <Typography variant="caption" className={classes.caption}>
-          <span className={classes.captionRight}>OY-JZI</span>
-        </Typography>
+        {asset.registeration ? (
+          <Typography variant="caption" className={classes.caption}>
+            <span className={classes.captionRight}>asset.registeration</span>
+          </Typography>
+        ) : null}
       </CardContent>
     </Card>
   );

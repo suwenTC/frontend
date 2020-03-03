@@ -2,29 +2,29 @@ import React, { Component } from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import TableNamePanel from "./tableNamePanel";
-import DataTableBody from "./dataTableBody";
+import TableNamePanel from "./TableNamePanel";
+import DataTableBody from "./DataTableBody";
 
 import { dataTableStyles as styles } from "../../styles/dataTableStyles";
-import ScoreBoard from "./scoreBoard";
+import ScoreBoard from "./ScoreBoard";
 
 class DataTable extends Component {
   render() {
-    const { data, scores, button } = this.props;
+    const { table, scores, button } = this.props;
 
     return (
       <Paper style={styles.rectangle13}>
         <Grid container direction="column" spacing={1}>
           <Grid xs={12} item>
             <TableNamePanel
-              label={data.label}
-              caption={data.caption}
+              label={table.label}
+              caption={table.caption}
               button={button}
             />
           </Grid>
 
           <Grid xs={12} item>
-            {<DataTableBody data={data.data} />}
+            {<DataTableBody data={table.data} />}
           </Grid>
 
           {scores ? (

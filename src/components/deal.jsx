@@ -6,8 +6,8 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Paper from "@material-ui/core/Paper";
 
-import Assets from "./assets";
-import DealSummary from "./dealSummary";
+import Assets from "./Assets";
+import DealSummary from "./DealSummary";
 
 import { dealExpansionPanelStyles } from "../styles/dealExpansionPanelStyles";
 

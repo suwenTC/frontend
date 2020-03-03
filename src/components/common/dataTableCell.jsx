@@ -6,6 +6,7 @@ import { dataTableCellStyles } from "../../styles/dataTableCellStyles";
 
 const DataTableCell = ({ overline, data, captions }) => {
   const classes = dataTableCellStyles();
+
   return (
     <Paper elevation={0} className={classes.root}>
       <Typography
