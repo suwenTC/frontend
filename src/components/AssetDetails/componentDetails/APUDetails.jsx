@@ -7,19 +7,19 @@ const APUDetails = ({ data }) => {
   return (
     <Grid container spacing={2} alignItems="flex-start">
       <Grid item sm={12} md={12} lg={6}>
-        <DataTable table={data.status} />
+        <DataTable data={data.status} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <DataTable table={data.shopVisitHistory} />
+        <DataTable data={data.shopVisitHistory} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <DataTable table={data.shopVisitAssumpytions} />
+        <DataTable data={data.shopVisitAssumpytions} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <EditableTable table={data.scheduledShopVisit} />
+        <EditableTable data={data.scheduledShopVisit} />
       </Grid>
     </Grid>
   );

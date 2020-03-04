@@ -2,11 +2,23 @@ import React from "react";
 import AssetComponent from "../AssetDetails/AssetComponentView";
 import { Box, Typography } from "@material-ui/core";
 
-import { mapToViewModelHeader } from "../AssetDetails/viewModels/getViewModels";
+import { mapToViewModelHeader } from "../AssetDetails/viewModels/viewModels";
 import { getAssetDetails } from "../AssetDetails/viewModels/fakeAssetDetailsService";
 
 const AssetDetails = () => {
   const assetDetails = getAssetDetails();
+  const assetSummary = [
+    {
+      id: assetDetails.aircraftID,
+      componentType: "AssetSummary",
+      series: assetDetails.aCseries,
+      operator: assetDetails.operator,
+      buildYear: assetDetails.buildYear,
+      flightHours: assetDetails.totalFlightHours,
+      flightCycles: assetDetails.totalFlightCycles
+    }
+  ];
+
   const airframeChecks = assetDetails.airframeChecks;
   const engines = assetDetails.engines;
   const landingGears = assetDetails.landingGear;
@@ -46,6 +58,13 @@ const AssetDetails = () => {
 
   return (
     <Box>
+      {renderAssetComponents(
+        "Asset Summary",
+        <i className="fa fa-heart-o" aria-hidden="true" />,
+        assetSummary
+      )}
+      <br />
+
       {renderAssetComponents(
         "Airframe Checks",
         <i className="fa fa-heart-o" aria-hidden="true" />,

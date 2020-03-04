@@ -10,28 +10,33 @@ import ScoreBoard from "./ScoreBoard";
 
 class DataTable extends Component {
   render() {
-    const { table, scores, button } = this.props;
+    const { data, scoreBoard, button } = this.props;
 
     return (
       <Paper style={styles.rectangle13}>
         <Grid container direction="column" spacing={1}>
           <Grid xs={12} item>
             <TableNamePanel
-              label={table.label}
-              caption={table.caption}
+              label={data.label}
+              caption={data.caption}
               button={button}
             />
           </Grid>
 
           <Grid xs={12} item>
-            {<DataTableBody data={table.data} />}
+            {<DataTableBody data={data.data} />}
           </Grid>
 
-          {scores ? (
+          {scoreBoard && (
             <Grid xs={12} item>
-              {<ScoreBoard />}
+              {
+                <ScoreBoard
+                  scores={scoreBoard.scores}
+                  title={scoreBoard.title}
+                />
+              }
             </Grid>
-          ) : null}
+          )}
         </Grid>
       </Paper>
     );

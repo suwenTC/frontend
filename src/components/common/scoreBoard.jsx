@@ -1,33 +1,12 @@
 import React from "react";
 import { Paper, Grid, Typography } from "@material-ui/core";
 
-import BorderLinearProgress from "./BroderLinearProgressBar";
-
-const ScoreBoard = () => {
-  const title = "Concentration Score";
-
-  const fleetScores = [
-    {
-      label: "Lessor",
-      value: 40,
-      content: value => <BorderLinearProgress value={value} />
-    },
-    {
-      label: "Operator",
-      value: 55,
-      content: value => <BorderLinearProgress value={value} />
-    },
-    {
-      label: "Region",
-      value: 82,
-      content: value => <BorderLinearProgress value={value} />
-    }
-  ];
+const ScoreBoard = ({ scores, title }) => {
   const renderCell = (item, span) => {
     return (
       <Grid sm={span} item>
         <Typography style={{ textAlign: "center" }} variant="subtitle1">
-          {item}
+          {item || "N/A"}
         </Typography>
       </Grid>
     );
@@ -37,15 +16,20 @@ const ScoreBoard = () => {
     <Paper style={{ backgroundColor: "#eaeaea" }}>
       <Grid container direction="column" spacing={2}>
         <Grid sm={12} item>
-          {renderCell(title)}
+          {title && renderCell(title)}
         </Grid>
 
-        {fleetScores.map((item, index) => (
+        {scores.map((item, index) => (
           <Grid key={index} sm={12} item>
-            <Grid container justify="center" alignItems="center" spacing={2}>
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
               {renderCell(item.label, 2)}
               {renderCell(item.content(item.value), 8)}
-              {renderCell(item.value / 10, 2)}
+              {renderCell(item.value && Math.round(item.value / 10, 2), 2)}
             </Grid>
           </Grid>
         ))}

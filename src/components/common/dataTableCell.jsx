@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { dataTableCellStyles } from "../../styles/dataTableCellStyles";
 
-const DataTableCell = ({ overline, data, captions }) => {
+const DataTableCell = ({ overline, data, captions, content }) => {
   const classes = dataTableCellStyles();
 
   return (
@@ -16,9 +16,14 @@ const DataTableCell = ({ overline, data, captions }) => {
       >
         {overline}
       </Typography>
-      <Typography variant="subtitle1" className={classes.subtitle1}>
-        {data}
-      </Typography>
+
+      {content ? (
+        content(data)
+      ) : (
+        <Typography variant="subtitle1" className={classes.subtitle1}>
+          {data ? data : "N/A"}
+        </Typography>
+      )}
 
       {captions.map((caption, index) => (
         <Typography

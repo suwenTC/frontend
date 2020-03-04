@@ -8,19 +8,19 @@ const AirframeCheckDetails = ({ data }) => {
   return (
     <Grid container spacing={2}>
       <Grid item sm={12} md={12} lg={6}>
-        <DataTable table={data.checkStatus} />
+        <DataTable data={data.checkStatus} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <DataTable table={data.checkHistory} />
+        <DataTable data={data.checkHistory} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <EditableTable table={data.scheduledShopVisit} />
+        <DataTable data={data.scheduledShopVisit} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <DataTable table={data.shopVisitAssumptions} />
+        <EditableTable data={data.shopVisitAssumptions} />
       </Grid>
     </Grid>
   );

@@ -16,20 +16,26 @@ import LoadingPanel from "./componentDetails/LoadingPanel";
 
 import AssetComponentHeader from "./AssetComponentHeader";
 
-import { mapToViewModelTables } from "./viewModels/getViewModels";
+import {
+  mapToViewModel_AirframeChecks,
+  mapToViewModel_Summary
+} from "./viewModels/viewModels";
+
 import { getAirframeChecks } from "./viewModels/fakeAirframeChecksService";
+import { getAssetSummary } from "./viewModels/fakeAssetSummaryService";
 
 import "./styles.css";
 
 class AssetComponent extends Component {
   state = { expanded: false, data: null };
 
-  handleChange = panel => (event, isExpanded) => {
+  handleChange = (panel, componentType) => (event, isExpanded) => {
     this.setState({ expanded: isExpanded ? panel : false });
 
     setTimeout(() => {
-      const data = mapToViewModelTables(getAirframeChecks()[0]);
+      let data = mapToViewModel_Summary(getAssetSummary());
 
+      // data = mapToViewModel_AirframeChecks(getAirframeChecks()[0]);
       this.setState({ data });
     }, 1600);
   };
@@ -62,7 +68,7 @@ class AssetComponent extends Component {
       <Box flexGrow={1} className="header-root">
         <ExpansionPanel
           expanded={this.state.expanded === panelName}
-          onChange={this.handleChange(panelName)}
+          onChange={this.handleChange(panelName, componentType)}
         >
           <ExpansionPanelSummary
             className="panel-border"

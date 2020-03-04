@@ -8,23 +8,23 @@ const EnginePRDetails = ({ data }) => {
   return (
     <Grid container spacing={2} alignItems="flex-start">
       <Grid item sm={12} md={12} lg={6}>
-        <DataTable table={data.assetDetails} />
+        <DataTable data={data.assetDetails} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <DataTable table={data.engineStatus} />
+        <DataTable data={data.engineStatus} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <DataTable table={data.shopVisitAssumpytions} />
+        <DataTable data={data.shopVisitAssumpytions} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <EditableTable table={data.scheduledShopVisit} />
+        <EditableTable data={data.scheduledShopVisit} />
       </Grid>
 
       <Grid item sm={12} md={12} lg={6}>
-        <EditableTable table={data.shopVisitHistory} />
+        <EditableTable data={data.shopVisitHistory} />
       </Grid>
     </Grid>
   );

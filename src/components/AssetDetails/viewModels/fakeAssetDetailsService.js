@@ -12,7 +12,7 @@ const assetDetails = {
   aircraftID: 17,
   aCseries: "737-900ER",
   operator: "Lion Air",
-  buildYear: 1,
+  buildYear: 2001,
   totalFlightHours: 28792,
   totalFlightCycles: 20068,
   airframeChecks: [
@@ -141,66 +141,6 @@ const assetDetails = {
     }
   ]
 };
-
-function mapToViewModelLease(snapShot) {
-  return [
-    { label: snapShot.lessee, caption: null, span: [2, 8] },
-
-    {
-      label: moment(snapShot.startDate).format("MMM-DD-YYYY"),
-      caption: "Start Date",
-      span: [3, 1]
-    },
-    {
-      label: moment(snapShot.startDate).format("MMM-DD-YYYY"),
-      caption: "End Date",
-      span: [3, 1]
-    },
-    {
-      label: `$${snapShot.rent}/m`,
-      caption: "Lease Rent",
-      span: [2, 1]
-    },
-    {
-      label: snapShot.leaseType,
-      caption: null,
-      span: [2, 1]
-    }
-  ];
-}
-
-export function mapToViewModel(snapShot, componentType) {
-  return componentType === "Lease"
-    ? mapToViewModelLease(snapShot)
-    : [
-        { label: snapShot.name, caption: null, span: [2, 7] },
-        {
-          label: snapShot.status_FlightHours,
-          caption: "Hours Since",
-          span: [2, 1]
-        },
-        {
-          label: snapShot.status_FlightCycle,
-          caption: "Cycles Since",
-          span: [2, 1]
-        },
-        {
-          label: snapShot.status_Days,
-          caption: "Days Since",
-          span: [2, 1]
-        },
-        {
-          label: snapShot.status_ActiveHours,
-          caption: "Hours Since",
-          span: [2, 1]
-        },
-        {
-          label: moment(snapShot.status_AsOfDate).format("MMM-DD-YYYY"),
-          caption: "As of Date",
-          span: [2, 1]
-        }
-      ];
-}
 
 export function getAssetDetails() {
   return assetDetails;

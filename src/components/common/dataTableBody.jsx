@@ -17,6 +17,7 @@ const DataTableBody = ({ data }) => {
                     overline={e.label}
                     data={e.value}
                     captions={e.captions}
+                    content={e.content ? e.content : null}
                   />
                 </Grid>
               ))
